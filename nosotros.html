@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Conoce la historia de NutriPaws, nuestra misión, valores y el equipo detrás de los mejores alimentos naturales para mascotas." />
+  <title>Nosotros – NutriPaws</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="css/global.css" />
+  <!-- Estilos de página -->
+  <link rel="stylesheet" href="css/nosotros.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       TOPBAR
+       ===================================================== -->
+  <div id="pf-topbar" class="pf-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        <i class="bi bi-truck me-1"></i>
+        Envío gratis en compras mayores a $150.000
+      </span>
+      <button id="topbarDismiss" class="btn btn-sm p-0 border-0 text-white opacity-75" aria-label="Cerrar">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="pf-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <div class="brand-icon me-2">
+          <i class="bi bi-heart-fill text-pf-primary fs-4"></i>
+        </div>
+        <span class="brand-name">Nutri<span>Paws</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMain"
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="catalogo.html">Catálogo</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+          <a href="catalogo.html" class="btn-pf-primary btn">
+            <i class="bi bi-bag2 me-1"></i> Ver Productos
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE HERO / BREADCRUMB
+       ===================================================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-7">
+          <div class="pf-badge" data-animate>Nuestra historia</div>
+          <h1 class="page-hero-title" data-animate data-delay="100">
+            Somos NutriPaws
+          </h1>
+          <p class="page-hero-subtitle" data-animate data-delay="200">
+            Una empresa nacida del amor por los animales y la convicción de que
+            merecen una alimentación tan buena como la nuestra.
+          </p>
+          <nav aria-label="breadcrumb" data-animate data-delay="300">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Nosotros</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="page-hero-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       HISTORIA / ORIGEN
+       ===================================================== -->
+  <section class="pf-section" id="historia">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-6" data-animate>
+          <div class="story-img-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=600&q=80"
+              alt="Fundadores de NutriPaws con sus mascotas"
+              class="story-img-main rounded-pf"
+            />
+            <div class="story-year-badge">
+              <span class="year">2019</span>
+              <span class="label">Fundada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-animate data-delay="150">
+          <div class="pf-badge">Nuestros inicios</div>
+          <h2 class="pf-section-title">
+            Todo comenzó con<br />
+            <span class="text-pf-primary">una pregunta simple.</span>
+          </h2>
+          <div class="pf-divider pf-divider-left"></div>
+          <p class="text-muted mb-3">
+            En 2019, Andrea y Tomás, dos amantes de los animales y apasionados
+            por la nutrición, se preguntaron: <em>"¿Por qué no existe un alimento
+            para mascotas tan natural y transparente como el que nosotros
+            elegimos para comer?"</em>
+          </p>
+          <p class="text-muted mb-3">
+            Esa pregunta los llevó a investigar, formarse con nutricionistas
+            veterinarios y desarrollar las primeras recetas de NutriPaws en
+            una pequeña cocina artesanal en Bogotá.
+          </p>
+          <p class="text-muted mb-4">
+            Hoy, más de 2.500 mascotas disfrutan de nuestros productos y cada
+            receta sigue siendo elaborada con los mismos principios: ingredientes
+            reales, procesos transparentes y amor genuino.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <div class="story-stat">
+              <span class="story-stat-num">2.500+</span>
+              <span class="story-stat-label">Mascotas felices</span>
+            </div>
+            <div class="story-stat">
+              <span class="story-stat-num">6</span>
+              <span class="story-stat-label">Años de experiencia</span>
+            </div>
+            <div class="story-stat">
+              <span class="story-stat-num">15+</span>
+              <span class="story-stat-label">Productos en catálogo</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       MISIÓN, VISIÓN Y VALORES
+       ===================================================== -->
+  <section class="pf-section bg-pf-light" id="valores">
+    <div class="container">
+      <div class="text-center mb-5" data-animate>
+        <div class="pf-badge">Lo que nos mueve</div>
+        <h2 class="pf-section-title">Misión, Visión y Valores</h2>
+        <div class="pf-divider"></div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <!-- Misión -->
+        <div class="col-md-6" data-animate data-delay="0">
+          <div class="mvv-card h-100">
+            <div class="mvv-icon">
+              <i class="bi bi-bullseye"></i>
+            </div>
+            <h4 class="fw-700 mb-3">Nuestra Misión</h4>
+            <p class="text-muted mb-0">
+              Ofrecer alimentos naturales de alta calidad para perros y gatos,
+              elaborados con ingredientes reales y procesos artesanales, que
+              contribuyan a la salud, vitalidad y felicidad de cada mascota,
+              mientras construimos una relación de confianza y transparencia
+              con sus familias.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visión -->
+        <div class="col-md-6" data-animate data-delay="100">
+          <div class="mvv-card h-100">
+            <div class="mvv-icon mvv-icon--green">
+              <i class="bi bi-eye-fill"></i>
+            </div>
+            <h4 class="fw-700 mb-3">Nuestra Visión</h4>
+            <p class="text-muted mb-0">
+              Ser la marca de referencia en alimentación natural para mascotas
+              en Latinoamérica, reconocida por la calidad de sus ingredientes,
+              la innovación en sus fórmulas y el impacto positivo que generamos
+              en la vida de las mascotas y sus familias.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Valores -->
+      <div class="row g-3">
+        <div class="col-6 col-md-3" data-animate data-delay="0">
+          <div class="value-card text-center p-4 h-100">
+            <div class="value-icon">🌿</div>
+            <h6 class="fw-700 mb-1">Naturalidad</h6>
+            <p class="small text-muted mb-0">Solo ingredientes reales, sin artificios.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-animate data-delay="80">
+          <div class="value-card text-center p-4 h-100">
+            <div class="value-icon">🔬</div>
+            <h6 class="fw-700 mb-1">Ciencia</h6>
+            <p class="small text-muted mb-0">Respaldo nutricional y veterinario.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-animate data-delay="160">
+          <div class="value-card text-center p-4 h-100">
+            <div class="value-icon">💚</div>
+            <h6 class="fw-700 mb-1">Responsabilidad</h6>
+            <p class="small text-muted mb-0">Producción consciente y sostenible.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-animate data-delay="240">
+          <div class="value-card text-center p-4 h-100">
+            <div class="value-icon">🤝</div>
+            <h6 class="fw-700 mb-1">Confianza</h6>
+            <p class="small text-muted mb-0">Transparencia en cada ingrediente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       PROCESO DE ELABORACIÓN
+       ===================================================== -->
+  <section class="pf-section" id="proceso">
+    <div class="container">
+      <div class="text-center mb-5" data-animate>
+        <div class="pf-badge">Cómo lo hacemos</div>
+        <h2 class="pf-section-title">Nuestro proceso artesanal</h2>
+        <div class="pf-divider"></div>
+        <p class="pf-section-subtitle">
+          Cada producto pasa por un proceso cuidadoso que garantiza la máxima
+          calidad y nutrición para tu mascota.
+        </p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step" data-animate data-delay="0">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h5 class="fw-700 mb-2">Selección de ingredientes</h5>
+            <p class="text-muted small mb-0">
+              Trabajamos con proveedores locales certificados para obtener
+              carnes, pescados y vegetales frescos de la más alta calidad.
+            </p>
+          </div>
+        </div>
+        <div class="process-step" data-animate data-delay="100">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h5 class="fw-700 mb-2">Preparación artesanal</h5>
+            <p class="text-muted small mb-0">
+              Los ingredientes se limpian, cortan y preparan a mano siguiendo
+              recetas desarrolladas con nutricionistas veterinarios.
+            </p>
+          </div>
+        </div>
+        <div class="process-step" data-animate data-delay="200">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h5 class="fw-700 mb-2">Deshidratación controlada</h5>
+            <p class="text-muted small mb-0">
+              Utilizamos deshidratación a baja temperatura para preservar
+              todos los nutrientes, vitaminas y el sabor natural.
+            </p>
+          </div>
+        </div>
+        <div class="process-step" data-animate data-delay="300">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h5 class="fw-700 mb-2">Control de calidad</h5>
+            <p class="text-muted small mb-0">
+              Cada lote es revisado y aprobado antes de ser empacado,
+              garantizando que cumple con nuestros estándares nutricionales.
+            </p>
+          </div>
+        </div>
+        <div class="process-step" data-animate data-delay="400">
+          <div class="process-number">05</div>
+          <div class="process-content">
+            <h5 class="fw-700 mb-2">Empaque y entrega</h5>
+            <p class="text-muted small mb-0">
+              Empacamos en envases herméticos que preservan la frescura y
+              enviamos directamente a tu puerta en 24–48 horas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EQUIPO
+       ===================================================== -->
+  <section class="pf-section bg-pf-light" id="equipo">
+    <div class="container">
+      <div class="text-center mb-5" data-animate>
+        <div class="pf-badge">Las personas detrás</div>
+        <h2 class="pf-section-title">Nuestro equipo</h2>
+        <div class="pf-divider"></div>
+        <p class="pf-section-subtitle">
+          Un equipo apasionado por los animales y comprometido con ofrecer
+          lo mejor para tus mascotas.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Miembro 1 -->
+        <div class="col-sm-6 col-lg-3" data-animate data-delay="0">
+          <div class="team-card text-center">
+            <div class="team-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80"
+                alt="Andrea López – Cofundadora"
+                class="team-img"
+              />
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info p-3">
+              <h6 class="fw-700 mb-0">Andrea López</h6>
+              <span class="team-role">Cofundadora &amp; CEO</span>
+              <p class="small text-muted mt-2 mb-0">
+                Nutricionista de animales con 10 años de experiencia y dueña de 3 gatos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miembro 2 -->
+        <div class="col-sm-6 col-lg-3" data-animate data-delay="100">
+          <div class="team-card text-center">
+            <div class="team-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80"
+                alt="Tomás Rueda – Cofundador"
+                class="team-img"
+              />
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info p-3">
+              <h6 class="fw-700 mb-0">Tomás Rueda</h6>
+              <span class="team-role">Cofundador &amp; CTO</span>
+              <p class="small text-muted mt-2 mb-0">
+                Ingeniero de alimentos y apasionado por la nutrición funcional para mascotas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miembro 3 -->
+        <div class="col-sm-6 col-lg-3" data-animate data-delay="200">
+          <div class="team-card text-center">
+            <div class="team-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80"
+                alt="Valentina Cruz – Nutricionista"
+                class="team-img"
+              />
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info p-3">
+              <h6 class="fw-700 mb-0">Valentina Cruz</h6>
+              <span class="team-role">Nutricionista Veterinaria</span>
+              <p class="small text-muted mt-2 mb-0">
+                Especialista en nutrición clínica animal, asesora de todas nuestras fórmulas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Miembro 4 -->
+        <div class="col-sm-6 col-lg-3" data-animate data-delay="300">
+          <div class="team-card text-center">
+            <div class="team-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80"
+                alt="Felipe Mora – Producción"
+                class="team-img"
+              />
+              <div class="team-social">
+                <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div class="team-info p-3">
+              <h6 class="fw-700 mb-0">Felipe Mora</h6>
+              <span class="team-role">Jefe de Producción</span>
+              <p class="small text-muted mt-2 mb-0">
+                Supervisa cada lote para garantizar los más altos estándares de calidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CERTIFICACIONES / CONFIANZA
+       ===================================================== -->
+  <section class="pf-section-sm" id="certificaciones">
+    <div class="container">
+      <div class="text-center mb-4" data-animate>
+        <h5 class="fw-700 text-muted">Respaldados por</h5>
+      </div>
+      <div class="row g-3 justify-content-center align-items-center" data-animate>
+        <div class="col-6 col-md-2 text-center">
+          <div class="cert-badge">
+            <i class="bi bi-patch-check-fill text-pf-secondary fs-2 d-block mb-1"></i>
+            <small class="fw-700">INVIMA</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+          <div class="cert-badge">
+            <i class="bi bi-award-fill text-pf-primary fs-2 d-block mb-1"></i>
+            <small class="fw-700">ISO 22000</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+          <div class="cert-badge">
+            <i class="bi bi-heart-pulse-fill text-danger fs-2 d-block mb-1"></i>
+            <small class="fw-700">Vet Approved</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+          <div class="cert-badge">
+            <i class="bi bi-leaf-fill text-success fs-2 d-block mb-1"></i>
+            <small class="fw-700">100% Natural</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 text-center">
+          <div class="cert-badge">
+            <i class="bi bi-recycle text-pf-secondary fs-2 d-block mb-1"></i>
+            <small class="fw-700">Eco Friendly</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CTA FINAL
+       ===================================================== -->
+  <section class="pf-section-sm" id="cta">
+    <div class="container" data-animate>
+      <div class="pf-cta-banner text-center">
+        <div class="position-relative" style="z-index:1">
+          <h2 class="fw-800 text-white fs-1 mb-2">
+            ¿Listo para darle lo mejor a tu mascota?
+          </h2>
+          <p class="text-white opacity-75 mb-4 fs-5">
+            Explora nuestro catálogo y encuentra el alimento perfecto.
+          </p>
+          <a href="catalogo.html" class="btn btn-light btn-lg fw-700 px-5 rounded-pill">
+            <i class="bi bi-bag2-fill me-2 text-pf-primary"></i>
+            Ver catálogo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-heart-fill text-pf-primary fs-4"></i>
+            <span class="footer-brand-name">Nutri<span>Paws</span></span>
+          </div>
+          <p class="footer-tagline mb-3">
+            Alimentos naturales, nutritivos y elaborados con cariño para quienes
+            llenan tu vida de amor.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6>Sitio</h6>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6>Productos</h6>
+          <ul>
+            <li><a href="catalogo.html">Para Perros</a></li>
+            <li><a href="catalogo.html">Para Gatos</a></li>
+            <li><a href="catalogo.html">Snacks</a></li>
+            <li><a href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h6>Contacto</h6>
+          <ul>
+            <li><a href="mailto:hola@nutripaws.com"><i class="bi bi-envelope me-2"></i>hola@nutripaws.com</a></li>
+            <li><a href="tel:+573001234567"><i class="bi bi-telephone me-2"></i>+57 300 123 4567</a></li>
+            <li><a href="#"><i class="bi bi-geo-alt me-2"></i>Bogotá, Colombia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span>&copy; 2025 NutriPaws. Todos los derechos reservados.</span>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white-50">Términos y condiciones</a>
+          <a href="#" class="text-white-50">Política de privacidad</a>
+          <a href="#" class="text-white-50">Envíos y devoluciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/nosotros.js"></script>
+</body>
+</html>

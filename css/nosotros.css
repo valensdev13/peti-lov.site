@@ -1,0 +1,361 @@
+/* =========================================================
+   PetFood - Nosotros Page Styles
+   ========================================================= */
+
+/* =====================================================
+   PAGE HERO
+   ===================================================== */
+.page-hero {
+  background: linear-gradient(135deg, var(--pf-light-bg) 0%, rgba(224,123,57,.08) 50%, rgba(74,124,89,.08) 100%);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224,123,57,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--pf-dark);
+  margin-bottom: 1rem;
+}
+
+.page-hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--pf-gray);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.75;
+}
+
+.page-hero .breadcrumb {
+  background: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.page-hero .breadcrumb-item a {
+  color: var(--pf-primary);
+  font-weight: 600;
+}
+
+.page-hero .breadcrumb-item.active {
+  color: var(--pf-gray);
+}
+
+.page-hero .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--pf-gray);
+}
+
+.page-hero-wave {
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  line-height: 0;
+}
+
+.page-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* =====================================================
+   HISTORIA
+   ===================================================== */
+.story-img-wrap {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.story-img-main {
+  width: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  box-shadow: var(--pf-shadow-hover);
+}
+
+.story-year-badge {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 2rem;
+  background: var(--pf-primary);
+  color: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(224,123,57,.4);
+}
+
+.story-year-badge .year {
+  display: block;
+  font-family: var(--pf-font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.story-year-badge .label {
+  display: block;
+  font-size: .75rem;
+  opacity: .85;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+/* Stats de historia */
+.story-stat {
+  display: flex;
+  flex-direction: column;
+  background: var(--pf-light-bg);
+  border-radius: var(--pf-border-radius);
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--pf-primary);
+}
+
+.story-stat-num {
+  font-family: var(--pf-font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--pf-primary);
+  line-height: 1;
+}
+
+.story-stat-label {
+  font-size: .78rem;
+  color: var(--pf-gray);
+  margin-top: .2rem;
+}
+
+/* =====================================================
+   MISIÓN, VISIÓN Y VALORES
+   ===================================================== */
+.mvv-card {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--pf-shadow);
+  transition: var(--pf-transition);
+  border-top: 4px solid var(--pf-primary);
+}
+
+.mvv-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pf-shadow-hover);
+}
+
+.mvv-icon {
+  width: 60px; height: 60px;
+  border-radius: 16px;
+  background: rgba(224,123,57,.12);
+  color: var(--pf-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.mvv-icon--green {
+  background: rgba(74,124,89,.12);
+  color: var(--pf-secondary);
+}
+
+.value-card {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  box-shadow: var(--pf-shadow);
+  transition: var(--pf-transition);
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pf-shadow-hover);
+}
+
+.value-icon {
+  font-size: 2.2rem;
+  margin-bottom: .75rem;
+  display: block;
+}
+
+/* =====================================================
+   PROCESO / TIMELINE
+   ===================================================== */
+.process-timeline {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--pf-primary), var(--pf-secondary));
+  border-radius: 2px;
+}
+
+.process-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.process-step:last-child { margin-bottom: 0; }
+
+.process-number {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--pf-primary);
+  color: var(--pf-white);
+  font-family: var(--pf-font-heading);
+  font-size: .9rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(224,123,57,.35);
+  position: relative;
+  z-index: 1;
+  margin-left: -2.5rem;
+}
+
+.process-content {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--pf-shadow);
+  flex: 1;
+  transition: var(--pf-transition);
+}
+
+.process-content:hover {
+  box-shadow: var(--pf-shadow-hover);
+  transform: translateX(4px);
+}
+
+/* =====================================================
+   EQUIPO
+   ===================================================== */
+.team-card {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  box-shadow: var(--pf-shadow);
+  overflow: hidden;
+  transition: var(--pf-transition);
+}
+
+.team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--pf-shadow-hover);
+}
+
+.team-img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.06);
+}
+
+.team-social {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.6));
+  padding: 2rem .75rem .75rem;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  transform: translateY(100%);
+  transition: var(--pf-transition);
+}
+
+.team-card:hover .team-social {
+  transform: translateY(0);
+}
+
+.team-social a {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.2);
+  color: var(--pf-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  transition: var(--pf-transition);
+}
+
+.team-social a:hover {
+  background: var(--pf-primary);
+}
+
+.team-role {
+  font-size: .8rem;
+  color: var(--pf-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+/* =====================================================
+   CERTIFICACIONES
+   ===================================================== */
+.cert-badge {
+  padding: 1.5rem 1rem;
+  border-radius: var(--pf-border-radius);
+  background: var(--pf-white);
+  box-shadow: var(--pf-shadow);
+  transition: var(--pf-transition);
+}
+
+.cert-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--pf-shadow-hover);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 767.98px) {
+  .story-year-badge {
+    right: 1rem;
+    bottom: -1rem;
+    padding: .75rem 1rem;
+  }
+  .story-year-badge .year { font-size: 1.5rem; }
+  .process-timeline { padding-left: 1rem; }
+  .process-number { margin-left: -1.5rem; width: 44px; height: 44px; }
+}
+
+@media (max-width: 575.98px) {
+  .page-hero { padding: 3.5rem 0 3rem; }
+  .story-img-main { max-height: 280px; }
+  .story-year-badge { display: none; }
+}

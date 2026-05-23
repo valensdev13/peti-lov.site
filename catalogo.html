@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Catálogo de alimentos naturales NutriPaws para perros y gatos. Croquetas, snacks, suplementos y más." />
+  <title>Catálogo – NutriPaws</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="css/global.css" />
+  <!-- Estilos de página -->
+  <link rel="stylesheet" href="css/catalogo.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       TOPBAR
+       ===================================================== -->
+  <div id="pf-topbar" class="pf-topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <span>
+        <i class="bi bi-truck me-1"></i>
+        Envío gratis en compras mayores a $150.000
+      </span>
+      <button id="topbarDismiss" class="btn btn-sm p-0 border-0 text-white opacity-75" aria-label="Cerrar">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       NAVBAR
+       ===================================================== -->
+  <nav class="pf-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <div class="brand-icon me-2">
+          <i class="bi bi-heart-fill text-pf-primary fs-4"></i>
+        </div>
+        <span class="brand-name">Nutri<span>Paws</span></span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarMain"
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="nosotros.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="catalogo.html">Catálogo</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0">
+          <a href="catalogo.html" class="btn-pf-primary btn">
+            <i class="bi bi-bag2 me-1"></i> Ver Productos
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE HERO
+       ===================================================== -->
+  <section class="page-hero-catalog">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-7">
+          <div class="pf-badge" data-animate>Nuestros productos</div>
+          <h1 class="page-hero-title" data-animate data-delay="100">
+            Catálogo NutriPaws
+          </h1>
+          <p class="page-hero-subtitle" data-animate data-delay="200">
+            Alimentos naturales, snacks artesanales y suplementos para perros y
+            gatos. Sin conservantes, sin artificios, solo nutrición real.
+          </p>
+          <!-- Buscador -->
+          <div class="catalog-search" data-animate data-delay="300">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text bg-white border-end-0">
+                <i class="bi bi-search text-muted"></i>
+              </span>
+              <input
+                type="search"
+                id="searchInput"
+                class="form-control border-start-0 ps-0"
+                placeholder="Buscar productos..."
+                aria-label="Buscar productos"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-hero-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       CATÁLOGO PRINCIPAL
+       ===================================================== -->
+  <section class="pf-section" id="catalogo">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- ===== SIDEBAR FILTROS ===== -->
+        <div class="col-lg-3">
+
+          <!-- Botón filtros mobile -->
+          <button
+            class="btn btn-pf-outline w-100 d-lg-none mb-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#filterSidebar"
+            aria-expanded="false"
+          >
+            <i class="bi bi-funnel me-2"></i> Filtrar productos
+          </button>
+
+          <div class="collapse d-lg-block" id="filterSidebar">
+            <div class="filter-sidebar">
+
+              <!-- Categoría -->
+              <div class="filter-group">
+                <h6 class="filter-title">
+                  <i class="bi bi-grid me-2"></i>Categoría
+                </h6>
+                <div class="filter-options">
+                  <label class="filter-option">
+                    <input type="radio" name="categoria" value="todos" checked />
+                    <span>Todos los productos</span>
+                    <span class="filter-count" id="count-todos">16</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="categoria" value="perros" />
+                    <span>Para Perros</span>
+                    <span class="filter-count" id="count-perros">9</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="categoria" value="gatos" />
+                    <span>Para Gatos</span>
+                    <span class="filter-count" id="count-gatos">5</span>
+                  </label>
+                  <label class="filter-option">
+                    <input type="radio" name="categoria" value="ambos" />
+                    <span>Perros y Gatos</span>
+                    <span class="filter-count" id="count-ambos">2</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Tipo -->
+              <div class="filter-group">
+                <h6 class="filter-title">
+                  <i class="bi bi-tag me-2"></i>Tipo de producto
+                </h6>
+                <div class="filter-options">
+                  <label class="filter-check">
+                    <input type="checkbox" name="tipo" value="croquetas" />
+                    <span>Croquetas</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="tipo" value="snacks" />
+                    <span>Snacks</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="tipo" value="suplementos" />
+                    <span>Suplementos</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="tipo" value="humedo" />
+                    <span>Alimento húmedo</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Rango de precio -->
+              <div class="filter-group">
+                <h6 class="filter-title">
+                  <i class="bi bi-currency-dollar me-2"></i>Precio
+                </h6>
+                <input
+                  type="range"
+                  class="form-range"
+                  id="priceRange"
+                  min="0" max="120000" step="5000" value="120000"
+                />
+                <div class="d-flex justify-content-between">
+                  <small class="text-muted">$0</small>
+                  <small class="fw-700 text-pf-primary" id="priceLabel">$120.000</small>
+                </div>
+              </div>
+
+              <!-- Edad -->
+              <div class="filter-group">
+                <h6 class="filter-title">
+                  <i class="bi bi-calendar3 me-2"></i>Etapa de vida
+                </h6>
+                <div class="filter-options">
+                  <label class="filter-check">
+                    <input type="checkbox" name="edad" value="cachorro" />
+                    <span>Cachorro / Gatito</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="edad" value="adulto" />
+                    <span>Adulto</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="edad" value="senior" />
+                    <span>Senior</span>
+                  </label>
+                  <label class="filter-check">
+                    <input type="checkbox" name="edad" value="todas" />
+                    <span>Todas las edades</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Botón limpiar -->
+              <button id="clearFilters" class="btn btn-outline-secondary w-100 btn-sm mt-2">
+                <i class="bi bi-x-circle me-1"></i> Limpiar filtros
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== GRID DE PRODUCTOS ===== -->
+        <div class="col-lg-9">
+
+          <!-- Toolbar -->
+          <div class="catalog-toolbar d-flex flex-wrap justify-content-between align-items-center mb-4 gap-2">
+            <p class="mb-0 text-muted small">
+              Mostrando <strong id="productCount">16</strong> productos
+            </p>
+            <div class="d-flex align-items-center gap-2">
+              <label class="small text-muted me-1" for="sortSelect">Ordenar por:</label>
+              <select id="sortSelect" class="form-select form-select-sm" style="width:auto">
+                <option value="default">Destacados</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+                <option value="name">Nombre A–Z</option>
+              </select>
+              <!-- Vista grid/lista -->
+              <div class="btn-group" role="group" aria-label="Vista">
+                <button id="viewGrid" class="btn btn-sm btn-pf-primary" aria-label="Vista cuadrícula">
+                  <i class="bi bi-grid-3x3-gap"></i>
+                </button>
+                <button id="viewList" class="btn btn-sm btn-outline-secondary" aria-label="Vista lista">
+                  <i class="bi bi-list-ul"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid de productos -->
+          <div id="productsGrid" class="row g-4">
+
+            <!-- Producto 1 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="croquetas" data-edad="adulto" data-precio="42000" data-nombre="Croquetas de Pollo Premium">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=400&q=80"
+                       alt="Croquetas de Pollo Premium" class="card-img-top" />
+                  <span class="product-tag">Más vendido</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Adultos · Croquetas</span>
+                  <h6 class="fw-700 mb-1 mt-1">Croquetas de Pollo Premium</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Pollo deshidratado con vegetales frescos y omega-3. Bolsa 1 kg.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$42.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Croquetas de Pollo Premium">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="gatos" data-tipo="snacks" data-edad="todas" data-precio="38000" data-nombre="Snacks de Salmón para Gatos">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&q=80"
+                       alt="Snacks de Salmón para Gatos" class="card-img-top" />
+                  <span class="product-tag product-tag-green">Nuevo</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Gatos · Todas las edades · Snacks</span>
+                  <h6 class="fw-700 mb-1 mt-1">Snacks de Salmón para Gatos</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Salmón deshidratado rico en ácidos grasos esenciales. 100g.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$38.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Snacks de Salmón para Gatos">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="croquetas" data-edad="cachorro" data-precio="55000" data-nombre="Fórmula Cachorro Natural">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80"
+                       alt="Fórmula Cachorro Natural" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Cachorros · Croquetas</span>
+                  <h6 class="fw-700 mb-1 mt-1">Fórmula Cachorro Natural</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Nutrición especial para el desarrollo óptimo de cachorros. Bolsa 2 kg.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$55.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Fórmula Cachorro Natural">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="snacks" data-edad="todas" data-precio="48000" data-nombre="Mix de Proteínas Naturales">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80"
+                       alt="Mix de Proteínas Naturales" class="card-img-top" />
+                  <span class="product-tag product-tag-orange">Oferta</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Todas las edades · Snacks</span>
+                  <h6 class="fw-700 mb-1 mt-1">Mix de Proteínas Naturales</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Combinación de res, pollo y pavo deshidratados. 150g.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <div>
+                      <span class="product-price">$48.000</span>
+                      <span class="product-price-old ms-1">$60.000</span>
+                    </div>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Mix de Proteínas Naturales">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="gatos" data-tipo="croquetas" data-edad="adulto" data-precio="45000" data-nombre="Croquetas de Atún para Gatos">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80"
+                       alt="Croquetas de Atún para Gatos" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Gatos · Adultos · Croquetas</span>
+                  <h6 class="fw-700 mb-1 mt-1">Croquetas de Atún para Gatos</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Atún del Pacífico con arroz integral y taurina natural. 800g.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$45.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Croquetas de Atún para Gatos">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="suplementos" data-edad="todas" data-precio="65000" data-nombre="Suplemento Articular Canino">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400&q=80"
+                       alt="Suplemento Articular Canino" class="card-img-top" />
+                  <span class="product-tag product-tag-green">Premium</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Adultos/Senior · Suplementos</span>
+                  <h6 class="fw-700 mb-1 mt-1">Suplemento Articular Canino</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Glucosamina y condroitina naturales para articulaciones saludables. 60 cápsulas.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$65.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Suplemento Articular Canino">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="ambos" data-tipo="snacks" data-edad="todas" data-precio="32000" data-nombre="Snacks Deshidratados Mix">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80"
+                       alt="Snacks Deshidratados Mix" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros y Gatos · Snacks</span>
+                  <h6 class="fw-700 mb-1 mt-1">Snacks Deshidratados Mix</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Variedad de carnes deshidratadas aptas para perros y gatos. 80g.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$32.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Snacks Deshidratados Mix">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="croquetas" data-edad="senior" data-precio="58000" data-nombre="Fórmula Senior Canina">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=400&q=80"
+                       alt="Fórmula Senior Canina" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Senior · Croquetas</span>
+                  <h6 class="fw-700 mb-1 mt-1">Fórmula Senior Canina</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Nutrición especial para perros mayores de 7 años. Bajo en grasa. 1.5 kg.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$58.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Fórmula Senior Canina">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="gatos" data-tipo="humedo" data-edad="adulto" data-precio="28000" data-nombre="Alimento Húmedo de Pollo para Gatos">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&q=80"
+                       alt="Alimento Húmedo de Pollo para Gatos" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Gatos · Adultos · Alimento Húmedo</span>
+                  <h6 class="fw-700 mb-1 mt-1">Alimento Húmedo de Pollo</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Pollo en caldo natural sin conservantes. Pack de 6 latas x 85g.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$28.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Alimento Húmedo de Pollo para Gatos">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="perros" data-tipo="snacks" data-edad="todas" data-precio="35000" data-nombre="Orejas de Cerdo Deshidratadas">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=400&q=80"
+                       alt="Orejas de Cerdo Deshidratadas" class="card-img-top" />
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros · Todas las edades · Snacks</span>
+                  <h6 class="fw-700 mb-1 mt-1">Orejas de Cerdo Deshidratadas</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Snack natural 100% cerdo deshidratado. Ideal para limpieza dental. 3 unidades.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$35.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Orejas de Cerdo Deshidratadas">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 11 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="gatos" data-tipo="suplementos" data-edad="todas" data-precio="72000" data-nombre="Omega 3 para Gatos">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400&q=80"
+                       alt="Omega 3 para Gatos" class="card-img-top" />
+                  <span class="product-tag product-tag-green">Premium</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Gatos · Todas las edades · Suplementos</span>
+                  <h6 class="fw-700 mb-1 mt-1">Omega 3 para Gatos</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Aceite de salmón puro para pelaje brillante y salud cardiovascular. 120ml.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$72.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Omega 3 para Gatos">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Producto 12 -->
+            <div class="col-sm-6 col-xl-4 product-item"
+                 data-categoria="ambos" data-tipo="suplementos" data-edad="todas" data-precio="85000" data-nombre="Probióticos Naturales">
+              <div class="pf-card catalog-product-card h-100">
+                <div class="catalog-img-wrap overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=400&q=80"
+                       alt="Probióticos Naturales" class="card-img-top" />
+                  <span class="product-tag">Recomendado</span>
+                  <button class="wishlist-btn" aria-label="Agregar a favoritos">
+                    <i class="bi bi-heart"></i>
+                  </button>
+                </div>
+                <div class="card-body p-3 d-flex flex-column">
+                  <span class="product-category">Perros y Gatos · Suplementos</span>
+                  <h6 class="fw-700 mb-1 mt-1">Probióticos Naturales</h6>
+                  <p class="small text-muted mb-2 flex-grow-1">Mezcla de probióticos y prebióticos para una digestión saludable. 90 cápsulas.</p>
+                  <div class="d-flex align-items-center justify-content-between mt-auto">
+                    <span class="product-price">$85.000</span>
+                    <button class="btn btn-sm btn-pf-primary add-to-cart" data-name="Probióticos Naturales">
+                      <i class="bi bi-bag-plus me-1"></i> Agregar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /#productsGrid -->
+
+          <!-- Sin resultados -->
+          <div id="noResults" class="text-center py-5 d-none">
+            <i class="bi bi-search fs-1 text-muted d-block mb-3"></i>
+            <h5 class="fw-700">No encontramos productos</h5>
+            <p class="text-muted">Intenta con otros filtros o términos de búsqueda.</p>
+            <button id="resetSearch" class="btn-pf-outline btn">
+              <i class="bi bi-arrow-counterclockwise me-1"></i> Restablecer búsqueda
+            </button>
+          </div>
+
+          <!-- Paginación -->
+          <nav aria-label="Paginación del catálogo" class="mt-5">
+            <ul class="pagination justify-content-center" id="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Anterior">
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Siguiente">
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div><!-- /.col-lg-9 -->
+      </div><!-- /.row -->
+    </div>
+  </section>
+
+  <!-- =====================================================
+       TOAST NOTIFICACIÓN
+       ===================================================== -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index:1100">
+    <div id="cartToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          <i class="bi bi-bag-check-fill me-2"></i>
+          <span id="toastMessage">Producto agregado al carrito.</span>
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+  <footer class="pf-footer">
+    <div class="container">
+      <div class="row g-4 pb-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <i class="bi bi-heart-fill text-pf-primary fs-4"></i>
+            <span class="footer-brand-name">Nutri<span>Paws</span></span>
+          </div>
+          <p class="footer-tagline mb-3">
+            Alimentos naturales, nutritivos y elaborados con cariño para quienes
+            llenan tu vida de amor.
+          </p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6>Sitio</h6>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6>Productos</h6>
+          <ul>
+            <li><a href="catalogo.html">Para Perros</a></li>
+            <li><a href="catalogo.html">Para Gatos</a></li>
+            <li><a href="catalogo.html">Snacks</a></li>
+            <li><a href="catalogo.html">Suplementos</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h6>Contacto</h6>
+          <ul>
+            <li><a href="mailto:hola@nutripaws.com"><i class="bi bi-envelope me-2"></i>hola@nutripaws.com</a></li>
+            <li><a href="tel:+573001234567"><i class="bi bi-telephone me-2"></i>+57 300 123 4567</a></li>
+            <li><a href="#"><i class="bi bi-geo-alt me-2"></i>Bogotá, Colombia</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <span>&copy; 2025 NutriPaws. Todos los derechos reservados.</span>
+        <div class="d-flex gap-3">
+          <a href="#" class="text-white-50">Términos y condiciones</a>
+          <a href="#" class="text-white-50">Política de privacidad</a>
+          <a href="#" class="text-white-50">Envíos y devoluciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Volver arriba">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

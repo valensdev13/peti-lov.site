@@ -1,0 +1,361 @@
+/* =========================================================
+   PetFood - Catálogo Page Styles
+   ========================================================= */
+
+/* =====================================================
+   PAGE HERO CATÁLOGO
+   ===================================================== */
+.page-hero-catalog {
+  background: linear-gradient(135deg, var(--pf-light-bg) 0%, rgba(74,124,89,.08) 50%, rgba(224,123,57,.08) 100%);
+  padding: 4.5rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.page-hero-catalog::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -80px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,124,89,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-hero-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--pf-dark);
+  margin-bottom: 1rem;
+}
+
+.page-hero-subtitle {
+  font-size: 1rem;
+  color: var(--pf-gray);
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.75;
+}
+
+.catalog-search {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.catalog-search .input-group {
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+}
+
+.catalog-search .input-group-text,
+.catalog-search .form-control {
+  border-color: rgba(0,0,0,.1);
+  font-size: .95rem;
+}
+
+.catalog-search .form-control:focus {
+  box-shadow: none;
+  border-color: var(--pf-primary);
+}
+
+.page-hero-wave {
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  line-height: 0;
+}
+
+.page-hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* =====================================================
+   SIDEBAR FILTROS
+   ===================================================== */
+.filter-sidebar {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  box-shadow: var(--pf-shadow);
+  padding: 1.5rem;
+  position: sticky;
+  top: 80px;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+}
+
+.filter-group:last-of-type {
+  border-bottom: none;
+  margin-bottom: .5rem;
+  padding-bottom: 0;
+}
+
+.filter-title {
+  font-family: var(--pf-font-heading);
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--pf-dark);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .9rem;
+}
+
+.filter-options { display: flex; flex-direction: column; gap: .4rem; }
+
+.filter-option,
+.filter-check {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+  padding: .3rem .5rem;
+  border-radius: 8px;
+  transition: var(--pf-transition);
+  font-size: .88rem;
+}
+
+.filter-option:hover,
+.filter-check:hover {
+  background: rgba(224,123,57,.07);
+}
+
+.filter-option input,
+.filter-check input {
+  accent-color: var(--pf-primary);
+  width: 16px; height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.filter-option span:first-of-type,
+.filter-check span {
+  flex: 1;
+  color: var(--pf-dark);
+}
+
+.filter-count {
+  background: rgba(0,0,0,.07);
+  color: var(--pf-gray);
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .1rem .5rem;
+  border-radius: 50px;
+}
+
+/* Range slider */
+.form-range::-webkit-slider-thumb {
+  background: var(--pf-primary);
+}
+.form-range::-moz-range-thumb {
+  background: var(--pf-primary);
+  border: none;
+}
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgba(224,123,57,.25);
+}
+
+/* =====================================================
+   TOOLBAR
+   ===================================================== */
+.catalog-toolbar {
+  background: var(--pf-white);
+  border-radius: var(--pf-border-radius);
+  padding: .75rem 1.25rem;
+  box-shadow: var(--pf-shadow);
+}
+
+.catalog-toolbar .form-select {
+  border-color: rgba(0,0,0,.12);
+  font-size: .88rem;
+  border-radius: 8px;
+}
+
+.catalog-toolbar .form-select:focus {
+  border-color: var(--pf-primary);
+  box-shadow: 0 0 0 3px rgba(224,123,57,.15);
+}
+
+/* =====================================================
+   PRODUCT CARDS CATÁLOGO
+   ===================================================== */
+.catalog-product-card {
+  position: relative;
+  transition: var(--pf-transition);
+}
+
+.catalog-img-wrap {
+  position: relative;
+}
+
+.catalog-img-wrap .card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.catalog-product-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Tags */
+.product-tag {
+  position: absolute;
+  top: .75rem; left: .75rem;
+  background-color: var(--pf-primary);
+  color: var(--pf-white);
+  font-family: var(--pf-font-heading);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: .2rem .65rem;
+  border-radius: 50px;
+  z-index: 1;
+}
+
+.product-tag-green  { background-color: var(--pf-secondary); }
+.product-tag-orange { background-color: var(--pf-accent); color: var(--pf-dark); }
+
+/* Wishlist button */
+.wishlist-btn {
+  position: absolute;
+  top: .75rem; right: .75rem;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.9);
+  border: none;
+  color: var(--pf-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--pf-transition);
+  z-index: 1;
+  backdrop-filter: blur(4px);
+}
+
+.wishlist-btn:hover,
+.wishlist-btn.active {
+  color: #E53E3E;
+  background: var(--pf-white);
+  transform: scale(1.1);
+}
+
+.wishlist-btn.active .bi-heart::before {
+  content: "\f415"; /* bi-heart-fill */
+}
+
+/* Precio */
+.product-price {
+  font-family: var(--pf-font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--pf-primary);
+}
+
+.product-price-old {
+  font-size: .82rem;
+  color: var(--pf-gray);
+  text-decoration: line-through;
+}
+
+.product-category {
+  font-size: .7rem;
+  color: var(--pf-gray);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 600;
+}
+
+/* =====================================================
+   VISTA LISTA
+   ===================================================== */
+#productsGrid.list-view .product-item {
+  width: 100% !important;
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+#productsGrid.list-view .catalog-product-card {
+  flex-direction: row;
+}
+
+#productsGrid.list-view .catalog-img-wrap {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+#productsGrid.list-view .catalog-img-wrap .card-img-top {
+  height: 100%;
+  border-radius: var(--pf-border-radius) 0 0 var(--pf-border-radius);
+}
+
+#productsGrid.list-view .pf-card {
+  display: flex;
+  flex-direction: row;
+}
+
+/* =====================================================
+   PAGINACIÓN
+   ===================================================== */
+.pagination .page-link {
+  color: var(--pf-primary);
+  border-color: rgba(0,0,0,.1);
+  border-radius: 8px !important;
+  margin: 0 .2rem;
+  font-weight: 600;
+  transition: var(--pf-transition);
+}
+
+.pagination .page-link:hover {
+  background-color: rgba(224,123,57,.1);
+  border-color: var(--pf-primary);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--pf-primary);
+  border-color: var(--pf-primary);
+  color: var(--pf-white);
+}
+
+.pagination .page-item.disabled .page-link {
+  color: var(--pf-gray);
+}
+
+/* =====================================================
+   ANIMACIÓN DE FILTRADO
+   ===================================================== */
+.product-item {
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.product-item.hidden {
+  display: none !important;
+}
+
+.product-item.fade-out {
+  opacity: 0;
+  transform: scale(.95);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+@media (max-width: 991.98px) {
+  .filter-sidebar {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .page-hero-catalog { padding: 3rem 0 2.5rem; }
+  .catalog-toolbar { flex-direction: column; align-items: flex-start !important; }
+}
